@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { tasksService } from "../Services/TasksService.js";
 
 
 export default class TasksController{
@@ -10,7 +11,15 @@ export default class TasksController{
     tasksService.flipSelect(taskID)
   }
 
-  get TasksOnListTemplate(listID){
+  deleteTask(taskID){
+    tasksService.deleteTask(taskID)
+  }
+
+  deleteTasksInList(listID){
+    tasksService.deleteTasksInList(listID)
+  }
+
+  getTasksOnListTemplate(listID){
     return tasksService.TasksOnListTemplate(listID)
   }
 }

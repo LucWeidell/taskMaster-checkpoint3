@@ -10,6 +10,15 @@ class TasksService {
     ProxyState.tasks = [...ProxyState.tasks, new Task(rawTask)]
   }
 
+  deleteTask(taskID){
+    ProxyState.tasks = ProxyState.tasks.filter(task => task.taskID != taskID)
+  }
+
+  deleteTasksInList(listID){
+    ProxyState.tasks = ProxyState.tasks.filter(task => task.listID != listID)
+  }
+
+
   flipSelect(taskID){
     ProxyState.tasks.find(task => task.id == taskID).flipSelect()
     //This will trigger redraw in the lists controller

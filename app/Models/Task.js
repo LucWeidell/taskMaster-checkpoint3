@@ -14,7 +14,7 @@ export default class Task{
     this.isSelected = !this.isSelected;
   }
 
-  get Template(listId) {
+  getTemplate(listId) {
     return /*html*/`
       <div class="col-md-12 d-flex justify-content-between">
         <div class="form-group form-check" onchange="app.tasksController.flipSelect('${this.taskID}')" >

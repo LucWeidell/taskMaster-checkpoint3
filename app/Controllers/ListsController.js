@@ -1,10 +1,10 @@
 import { ProxyState } from "../AppState.js";
-import { listsService } from "../Services/listsService.js";
+import { listsService } from "../Services/ListsService.js";
 import TasksController from "./TasksController.js";
 let tasksController = new TasksController()
 
 
-_draw(){
+function _draw(){
   let template = ''
   let lists = ProxyState.lists
   lists.forEach(list => {
@@ -14,26 +14,24 @@ _draw(){
     totTask.forEach(task=> {
       if(task.isSelected){
         finTask++
-    }})
-    template += list.Template(finTask, totTask)
-    template += tasksController.TasksOnListTemplate(list.listID)
+      }})
+    template += list.getTemplate(finTask, totTask)
 
-
-  })
-
-
+    })
   document.getElementById('lists').innerHTML = template
 }
 
-export default class listsController{
+export default class ListsController{
 
   constructor(){
     ProxyState.on['lists', _draw]
     ProxyState.on['tasks', _draw]
+    _draw()
 
   }
 
   deleteList(listId){
     listsService.deleteList(listId)
+    tasksController.deleteTasksInList(listId)
   }
 }
