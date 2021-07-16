@@ -14,19 +14,51 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+        <nav class="row text-center navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">taskMaster-checkpoint3</span>
+                <span class="ml-2">TaskMaster</span>
             </a>
         </nav>
     </header>
     <main class="container">
-        <div id="app"></div>
+        <!-- ANCHOR Done: form for adding the list -->
+        <div class="row">
+            <form onsubmit="app.listsController.addList()">
+                <div class="form-group">
+                    <div class="col-md-12 d-flex">
+                        <input required type="text" name="title" id="title" class="form-control"
+                            placeholder="List Title" minlength="3" max-length ="15" size="20">
+                        <select required name="color" id="color">
+                            <option>Green</option>
+                            <option selected>Blue</option>
+                            <option>Red</option>
+                            <option>Yellow</option>
+                            <option>Purple</option>
+                        </select>
+                    <button type="button" class="btn btn-outline-secondary">Create</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <!-- TODO add lists here -->
+        <div class="row" id ="lists">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- TODO add tasks here -->
+                    <div class="col-md-12" id="tasks">
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">
-            <p><small>Made with love by Codeworks</small></p>
+            <p><small>Get your life together! 😒💢</small></p>
         </div>
     </footer>
 
