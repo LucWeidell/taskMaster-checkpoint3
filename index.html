@@ -47,18 +47,19 @@
                 <div class="row">
                     <!-- FIXME Placeholder bg-color on col -->
                     <div class="col-md-12 text-center bg-blue">
+                        <span class="action d-flex justify-content-end" onclick="app.listsController.deleteList('LIST ID HERE')">X</span>
                         <h4>Name</h4>
                         <p>Checked / Completed</p>
                     </div>
                 </div>
-                <div class="row bg-white">
+                <div class="row bg-white" id = "tasks">
                     <!-- TODO add tasks here -->
-                    <div class="col-md-12" id="tasks">
-                        <!-- REVIEW replace console log with the updater -->
-                        <div class="form-group form-check" onchange="console.log('changed')">
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <div class="form-group form-check" onchange="app.tasksController('THIS TASK ID')" >
                             <input type="checkbox" class="form-check-input" id="testCheck">
                             <label class="form-check-label" for="exampleCheck1">Task HERE</label>
-                          </div>
+                        </div>
+                        <span class="action" onclick="app.tasksController.deleteTask('THIS TASK ID')">X</span>
                     </div>
                 </div>
             </div>

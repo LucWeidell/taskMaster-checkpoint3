@@ -10695,4 +10695,11 @@ main {
   flex-grow: 1;
 }
 
+.action {
+  cursor: pointer;
+}
+.action.hover.span {
+  color: black;
+}
+
 /*# sourceMappingURL=main.css.map */
