@@ -32,17 +32,19 @@ export default class ListsController{
     ProxyState.on['tasks', _draw]
     ProxyState.on['lists', saveState]
     ProxyState.on['tasks', saveState]
-     loadState() //wwait till i get other things working
+    _draw()
+     //loadState() //wwait till i get other things working
 
   }
 
-  // testDraw(){
-  //   _draw()
-  // }
+  testDraw(){
+    _draw()
+  }
 
   deleteList(listId){
     listsService.deleteList(listId)
     tasksController.deleteTasksInList(listId)
+    _draw()
   }
 
   addList(){

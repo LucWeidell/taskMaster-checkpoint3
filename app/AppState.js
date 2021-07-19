@@ -7,8 +7,9 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {List[]} */
   lists = [
-    new List ({title: 'Test in app1', color: 'blue'}),
-    new List ({title: 'Test in app2', color: 'green'}),
+    //Hard Coded examples for testing
+     new List ({title: 'Test in app1', color: 'blue'})
+    // new List ({title: 'Test in app2', color: 'green'}),
   ]
 
   /** @type {Task[]} */

@@ -23,7 +23,10 @@ class TasksService {
 
 
   flipSelect(taskID){
-    ProxyState.tasks.find(task => task.taskID == taskID).flipSelect()
+    let taskToFlip = ProxyState.tasks.find(task => task.taskID == taskID)
+    taskToFlip.flipSelect()
+    console.log('selected', taskToFlip)
+
     //This will trigger redraw in the lists controller
     ProxyState.tasks = ProxyState.tasks;
   }

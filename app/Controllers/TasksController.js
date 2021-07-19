@@ -9,6 +9,7 @@ export default class TasksController{
   constructor() {
   }
 
+
   addTask(listID){
     let listsController = new ListsController()
     event.preventDefault()
@@ -18,20 +19,26 @@ export default class TasksController{
       listID: listID
     }
     tasksService.addTask(rawTask)
-    // listsController.testDraw()
+    listsController.testDraw()
     taskInput.reset()
   }
 
   flipSelect(taskID){
+    let listsController = new ListsController()
     tasksService.flipSelect(taskID)
+    listsController.testDraw()
   }
 
   deleteTask(taskID){
+    let listsController = new ListsController()
     tasksService.deleteTask(taskID)
+    listsController.testDraw()
   }
 
   deleteTasksInList(listID){
+    let listsController = new ListsController()
     tasksService.deleteTasksInList(listID)
+    listsController.testDraw()
   }
 
   getTasksOnListTemplate(listID){
