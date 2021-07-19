@@ -3,14 +3,19 @@ import { generateId } from "../Utils/GeneratedID.js";
 
 export default class List{
 
-  constructor({title, color}){
+  constructor({title, color, listID = generateId()}){
 
     this.title = title;
     let interColor = color.toLowerCase();
 
-    this.color = 'bg-'+interColor;
+    if(color[1] == 'g'){
+      this.color = color
+    } else {
+      this.color = 'bg-'+interColor;
+    }
 
-    this.listID = generateId()
+
+    this.listID = listID
 
   }
 

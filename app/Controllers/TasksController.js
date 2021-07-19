@@ -21,7 +21,6 @@ export default class TasksController{
   }
 
   flipSelect(taskID){
-    debugger
     tasksService.flipSelect(taskID)
   }
 
