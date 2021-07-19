@@ -1,10 +1,13 @@
 import { ProxyState } from "../AppState.js";
+import List from "../Models/List.js";
+import Task from "../Models/Task.js";
+
 
 
 export function saveState() {
   localStorage.setItem('taskMaster', JSON.stringify({
     lists: ProxyState.lists,
-    tasks: ProxyState.toppings
+    tasks: ProxyState.tasks
   }))
   console.log('saved state', ProxyState)
 }
@@ -13,8 +16,8 @@ export function loadState() {
   let data = JSON.parse(localStorage.getItem('taskMaster'))
   console.log(data)
   if (data != null) {
-    ProxyState.lists = data.pizzas.map(p => new Pizza(p))
-    ProxyState.tasks = data.toppings.map(t => new Topping(t))
+    ProxyState.lists = data.lists.map(l => new List(l))
+    ProxyState.tasks = data.tasks.map(t => new Task(t))
   }
 
 }
