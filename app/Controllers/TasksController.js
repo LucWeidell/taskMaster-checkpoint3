@@ -1,5 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { tasksService } from "../Services/TasksService.js";
+import ListsController from "./listsController.js";
+
 
 
 export default class TasksController{
@@ -8,14 +10,15 @@ export default class TasksController{
   }
 
   addTask(listID){
+    let listsController = new ListsController()
     event.preventDefault()
-    debugger
     let taskInput = event.target
     let rawTask = {
       taskJob: taskInput.taskJob.value,
       listID: listID
     }
     tasksService.addTask(rawTask)
+    listsController.testDraw()
     taskInput.reset()
   }
 

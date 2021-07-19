@@ -8,7 +8,7 @@ class ListsService {
   constructor(){}
 
   addList(rawList){
-    ProxyState.lists = [...ProxyState.tasks, new List(rawList)]
+    ProxyState.lists = [...ProxyState.lists, new List(rawList)]
   }
 
   deleteList(listId){

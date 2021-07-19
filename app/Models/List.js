@@ -6,9 +6,9 @@ export default class List{
   constructor({title, color}){
 
     this.title = title;
-    this.color = color.toLowerCase();
-    let thisColor = 'bg-'+this.color;
-    this.color = thisColor;
+    let interColor = color.toLowerCase();
+
+    this.color = 'bg-'+interColor;
 
     this.listID = generateId()
 
@@ -42,8 +42,9 @@ export default class List{
     if (myTasks.length == 0) {
       return ''
     } else {
-      return myTasks.getTemplate(this.listID);
+      let template = ''
+      myTasks.forEach(task => template += task.getTemplate(this.listID));
+      return template
     }
   }
-
 }

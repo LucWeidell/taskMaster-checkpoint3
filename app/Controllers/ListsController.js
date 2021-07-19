@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { listsService } from "../Services/ListsService.js";
+import { saveState } from "../Utils/LocalStorage.js";
 import TasksController from "./TasksController.js";
 let tasksController = new TasksController()
 
@@ -29,8 +30,15 @@ export default class ListsController{
   constructor(){
     ProxyState.on['lists', _draw]
     ProxyState.on['tasks', _draw]
+    ProxyState.on['lists', saveState]
+    ProxyState.on['tasks', saveState]
     _draw()
+    // loadState() wwait till i get other things working
 
+  }
+
+  testDraw(){
+    _draw()
   }
 
   deleteList(listId){
@@ -46,6 +54,7 @@ export default class ListsController{
       color: form.color.value
     }
     listsService.addList(rawList)
+    _draw()
     form.reset()
   }
 }
