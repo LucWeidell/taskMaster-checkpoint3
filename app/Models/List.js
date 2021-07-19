@@ -15,6 +15,7 @@ export default class List{
   }
 
   getTemplate(finTasks, totTasks) {
+    console.log('getTemplateList:', finTasks, totTasks)
     return /*html*/`
       <div class="col-md-3 shadow-lg mt-3 mx-2 ">
         <div class="row">

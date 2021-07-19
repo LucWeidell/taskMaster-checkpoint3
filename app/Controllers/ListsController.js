@@ -10,7 +10,7 @@ function _draw(){
   let lists = ProxyState.lists
   lists.forEach(list => {
     //Getting total and all checked tasks: can make these functions later
-    let totTask = ProxyState.tasks.filter(task=> task.listID == list.id)
+    let totTask = ProxyState.tasks.filter(task=> task.listID == list.listID)
     let finTask = 0
     if(totTask.length == 0){
       template += list.getTemplate(0, 0)
@@ -19,7 +19,7 @@ function _draw(){
         if(task.isSelected){
           finTask++
       }})
-    template += list.getTemplate(finTask, totTask)
+    template += list.getTemplate(finTask, totTask.length)
     }
   document.getElementById('lists').innerHTML = template
   })
