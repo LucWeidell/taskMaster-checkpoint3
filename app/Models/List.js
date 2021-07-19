@@ -1,13 +1,14 @@
 import { ProxyState } from "../AppState.js";
 import { generateId } from "../Utils/GeneratedID.js";
-import Task from "./Task.js";
 
 export default class List{
 
   constructor({title, color}){
 
     this.title = title;
-    this.color = 'bg-' + color.toLowerCase();
+    this.color = color.toLowerCase();
+    let thisColor = 'bg-'+this.color;
+    this.color = thisColor;
 
     this.listID = generateId()
 

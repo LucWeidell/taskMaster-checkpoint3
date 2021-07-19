@@ -34,4 +34,15 @@ export default class ListsController{
     listsService.deleteList(listId)
     tasksController.deleteTasksInList(listId)
   }
+
+  addList(){
+    event.preventDefault()
+    let form = event.target
+    let rawList = {
+      title: form.title.value,
+      color: form.color.value
+    }
+    listsService.addList(rawList)
+    form.reset()
+  }
 }
