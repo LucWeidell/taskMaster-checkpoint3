@@ -13,19 +13,16 @@ class TasksService {
 
   deleteTask(taskID){
     ProxyState.tasks = ProxyState.tasks.filter(task => task.taskID != taskID)
-    ProxyState.tasks = ProxyState.tasks
   }
 
   deleteTasksInList(listID){
     ProxyState.tasks = ProxyState.tasks.filter(task => task.listID != listID)
-    ProxyState.tasks = ProxyState.tasks
   }
 
 
   flipSelect(taskID){
     let taskToFlip = ProxyState.tasks.find(task => task.taskID == taskID)
     taskToFlip.flipSelect()
-    console.log('selected', taskToFlip)
 
     //This will trigger redraw in the lists controller
     ProxyState.tasks = ProxyState.tasks;

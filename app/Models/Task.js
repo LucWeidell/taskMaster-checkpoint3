@@ -2,12 +2,12 @@ import { generateId } from "../Utils/GeneratedID.js";
 
 export default class Task{
 
-  constructor({taskJob, listID}){
+  constructor({taskJob, listID, isSelected = false}){
     this.taskJob = taskJob;
     this.listID = listID;
 
     this.taskID = generateId();
-    this.isSelected = false;
+    this.isSelected = isSelected;
   }
 
   flipSelect(){

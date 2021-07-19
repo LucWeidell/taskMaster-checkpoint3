@@ -26,7 +26,7 @@
         <div class="row">
             <form onsubmit="app.listsController.addList()">
                 <div class="form-group">
-                    <div class="col-md-12 d-flex">
+                    <div class="col-md-12 p-3 d-flex">
                         <input required type="text" name="title" id="title" class="form-control"
                             placeholder="List Title" minlength="3" max-length ="15" size="20">
                         <select required name="color" id="color">
@@ -36,10 +36,10 @@
                             <option class="bg-yellow">Yellow</option>
                             <option class="bg-purple">Purple</option>
                         </select>
-                    <button type="submit" class="btn btn-outline-secondary">Create</button>
+                        <button type="submit" class="btn btn-secondary">Create</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         </div>
         <!-- TODO add lists here -->
         <div class="row" id ="lists">

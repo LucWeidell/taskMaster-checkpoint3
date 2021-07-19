@@ -1,4 +1,4 @@
-import ListsController from "./Controllers/listsController.js";
+import ListsController from "./Controllers/ListsController.js";
 import TasksController from "./Controllers/TasksController.js";
 
 

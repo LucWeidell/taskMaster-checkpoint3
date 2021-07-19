@@ -33,17 +33,13 @@ function _draw(){
 export default class ListsController{
 
   constructor(){
-    ProxyState.on['lists', _draw()]
-    ProxyState.on['tasks', _draw]
-    ProxyState.on['lists', saveState]
-    ProxyState.on['tasks', saveState]
+    ProxyState.on('lists', _draw)
+    ProxyState.on('tasks', _draw)
+    ProxyState.on('lists', saveState)
+    ProxyState.on('tasks', saveState)
+    loadState()
     _draw()
-     //loadState() //wwait till i get other things working
 
-  }
-
-  testDraw(){
-    _draw()
   }
 
   deleteList(listId){
@@ -51,7 +47,6 @@ export default class ListsController{
       let tasksController = new TasksController()
       listsService.deleteList(listId)
       tasksController.deleteTasksInList(listId)
-      _draw()
     }
   }
 

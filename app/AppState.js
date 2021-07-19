@@ -8,7 +8,7 @@ class AppState extends EventEmitter {
   /** @type {List[]} */
   lists = [
     //Hard Coded examples for testing
-     new List ({title: 'Test in app1', color: 'blue'})
+    // new List ({title: 'Test in app1', color: 'blue'})
     // new List ({title: 'Test in app2', color: 'green'}),
   ]
 
