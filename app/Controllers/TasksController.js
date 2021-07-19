@@ -18,7 +18,7 @@ export default class TasksController{
       listID: listID
     }
     tasksService.addTask(rawTask)
-    listsController.testDraw()
+    // listsController.testDraw()
     taskInput.reset()
   }
 

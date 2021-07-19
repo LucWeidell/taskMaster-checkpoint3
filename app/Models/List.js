@@ -16,7 +16,7 @@ export default class List{
 
   getTemplate(finTasks, totTasks) {
     return /*html*/`
-      <div class="col-md-4 shadow-lg">
+      <div class="col-md-3 shadow-lg mt-3 mx-2 ">
         <div class="row">
           <div class="col-md-12 text-center ${this.color}">
               <span class="action d-flex justify-content-end" onclick="app.listsController.deleteList('${this.listID}')">X</span>
@@ -27,7 +27,7 @@ export default class List{
       <div class="row bg-white" id ="${this.listID}">
         ${this.getListTasks()}
       </div>
-      <div class="col">
+      <div class="col d-flex justify-content-center mt-1 p-0 mx-0">
         <form class= "d-flex" onsubmit="app.tasksController.addTask('${this.listID}')">
           <input required type="text" name="taskJob" placeholder="Add Task ...." minlength="3" maxlength="50">
           <button type="submit" class="btn btn-outline-success">+</button>

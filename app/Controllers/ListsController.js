@@ -37,9 +37,9 @@ export default class ListsController{
 
   }
 
-  testDraw(){
-    _draw()
-  }
+  // testDraw(){
+  //   _draw()
+  // }
 
   deleteList(listId){
     listsService.deleteList(listId)
