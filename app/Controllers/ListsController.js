@@ -11,14 +11,17 @@ function _draw(){
     //Getting total and all checked tasks: can make these functions later
     let totTask = ProxyState.tasks.filter(task=> task.listID == list.id)
     let finTask = 0
-    totTask.forEach(task=> {
-      if(task.isSelected){
-        finTask++
+    if(totTask.length == 0){
+      template += list.getTemplate(0, 0)
+    } else {
+      totTask.forEach(task=> {
+        if(task.isSelected){
+          finTask++
       }})
     template += list.getTemplate(finTask, totTask)
-
-    })
+    }
   document.getElementById('lists').innerHTML = template
+  })
 }
 
 export default class ListsController{

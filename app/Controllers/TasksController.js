@@ -7,6 +7,18 @@ export default class TasksController{
   constructor() {
   }
 
+  addTask(listID){
+    event.preventDefault()
+    debugger
+    let taskInput = event.target
+    let rawTask = {
+      taskJob: taskInput.taskJob.value,
+      listID: listID
+    }
+    tasksService.addTask(rawTask)
+    taskInput.reset()
+  }
+
   flipSelect(taskID){
     tasksService.flipSelect(taskID)
   }

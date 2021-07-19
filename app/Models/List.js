@@ -25,11 +25,11 @@ export default class List{
           </div>
         </div>
       <div class="row bg-white" id ="${this.listID}">
-        ${this.ListTasks()}
+        ${this.getListTasks()}
       </div>
       <div class="col">
-        <form class= "d-flex" onsubmit="app.tasksController.addTask(${this.listID})">
-          <input required type="text" name="topping" placeholder="Add Task ...." minlength="3" maxlength="50">
+        <form class= "d-flex" onsubmit="app.tasksController.addTask('${this.listID}')">
+          <input required type="text" name="taskJob" placeholder="Add Task ...." minlength="3" maxlength="50">
           <button type="submit" class="btn btn-outline-success">+</button>
         </form>
       </div>
@@ -37,9 +37,13 @@ export default class List{
     `
   }
 
-  get ListTasks(){
+  getListTasks(){
     let myTasks = ProxyState.tasks.filter(task => task.listID == this.listID)
+    if (myTasks.length == 0) {
+      return ''
+    } else {
       return myTasks.getTemplate(this.listID);
+    }
   }
 
 }
