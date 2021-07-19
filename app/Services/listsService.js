@@ -12,7 +12,7 @@ class ListsService {
   }
 
   deleteList(listId){
-    let newList = ProxyState.lists.filter(list => list != listId)
+    let newList = ProxyState.lists.filter(list => list.listID != listId)
     ProxyState.lists = newList
   }
 }

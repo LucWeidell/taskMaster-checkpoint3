@@ -30,9 +30,11 @@ export default class TasksController{
   }
 
   deleteTask(taskID){
-    let listsController = new ListsController()
-    tasksService.deleteTask(taskID)
-    listsController.testDraw()
+    if(window.confirm("Delete Task?")){
+      let listsController = new ListsController()
+      tasksService.deleteTask(taskID)
+      listsController.testDraw()
+    }
   }
 
   deleteTasksInList(listID){
